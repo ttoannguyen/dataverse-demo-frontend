@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
-  const { t } = useTranslation();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
@@ -30,7 +28,7 @@ const Nav = () => {
             to="/"
             className="text-amber-50 p-2 hover:bg-gray-200 hover:text-gray-500 font-medium text-lg transition-colors duration-200"
           >
-            {t("home")}
+            Home
           </Link>
           
           {/* Datasets with Dropdown */}
@@ -43,7 +41,7 @@ const Nav = () => {
               to="/dataverse"
               className="text-amber-50 p-2  hover:bg-gray-200 hover:text-gray-500 font-medium text-lg transition-colors duration-200 flex items-center"
             >
-              {t("datasets")}
+              Datasets
               <svg
                 className="ml-1 w-4 h-4"
                 fill="none"
@@ -68,32 +66,32 @@ const Nav = () => {
               onMouseLeave={handleMouseLeave}
             >
               <Link
-                to="/dataverse/public"
+                to="/dataverse"
                 className="block px-4 py-2 text-black hover:bg-[#ddd] hover:text-blue-400 text-sm transition-colors"
               >
-                {t("public_datasets")}
+                Data Search
               </Link>
               <Link
-                to="/dataverse/private"
+                to="/dataverse/test"
                 className="block px-4 py-2 text-black hover:bg-[#ddd] hover:text-blue-400 text-sm transition-colors"
               >
-                {t("private_datasets")}
+                test
               </Link>
               <Link
                 to="/dataverse/upload"
                 className="block px-4 py-2 text-black hover:bg-[#ddd] hover:text-blue-400 text-sm transition-colors"
               >
-                {t("upload_dataset")}
+                test
               </Link>
             </div>
           </div>
-        </div>
         <Link
             to="/dashboard"
             className="text-amber-50 p-2 hover:bg-gray-200 hover:text-gray-500 font-medium text-lg transition-colors duration-200"
           >
-            {t("dashboard")}
+            KMS
           </Link>
+        </div>
       </nav>
     </div>
   );

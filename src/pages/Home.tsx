@@ -5,9 +5,8 @@ export default function Home() {
   const { t } = useTranslation();
 
   return (
-    <div className=" min-h-screen flex flex-col">
-     
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="">
+      <div className="">
         CTU
       </div>
     </div>
