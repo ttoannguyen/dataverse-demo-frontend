@@ -12,7 +12,7 @@ const Navbar = () => {
               </span>
             </Link>
           </div>
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="flex flex-col md:flex items-center space-x-1">
             <Link to="/" className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">
               Home
             </Link>
