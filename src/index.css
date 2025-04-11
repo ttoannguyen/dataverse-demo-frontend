@@ -1,2 +1,12 @@
+/* Import Tailwind CSS */
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #292d56;
+  --color-nav: #373c6a;
+  --color-text-header: #6393d2;
+}
+
+*{
+  font-family: "Open-Sans" ,sans-serif;
+}

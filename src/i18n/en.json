@@ -1,13 +1,7 @@
 {
-    "home": {
-      "title": "Welcome to STAR-FARM",
-      "description": "The sustainable agriculture data portal for the Mekong Delta."
-    },
-    "nav": {
-      "home": "Home",
-      "kms": "KMS",
-      "datasets": "Datasets",
-      "about": "About"
-    }
-  }
+  "home": "Home",
+  "dashboard": "Dashboard",
+  "datasets": "Dataset Search",
+  "welcome": "Welcome to STAR-FARM"
+}
   

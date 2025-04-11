@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-export default function LanguageSwitcher() {
+const LanguageSwitcherder = () =>  {
   const { i18n } = useTranslation()
   return (
     <div className="space-x-2 text-sm">
@@ -9,3 +9,4 @@ export default function LanguageSwitcher() {
     </div>
   )
 }
+export default LanguageSwitcherder;

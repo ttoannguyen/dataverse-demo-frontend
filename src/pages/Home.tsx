@@ -1,18 +1,15 @@
-import { useTranslation } from 'react-i18next'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from "../components/Header";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
-    <>
-      <Header />
-      <main className="container mx-auto py-10">
-        <h1 className="text-3xl font-bold mb-4">{t('home.title')}</h1>
-        <p>{t('home.description')}</p>
-      </main>
-      <Footer />
-    </>
-  )
+    <div className=" min-h-screen flex flex-col">
+     
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        CTU
+      </div>
+    </div>
+  );
 }
