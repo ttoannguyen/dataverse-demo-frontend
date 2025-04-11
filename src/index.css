@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+/* Import Tailwind CSS */
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-primary: #292d56;
+  --color-nav: #373c6a;
+  --color-text-header: #6393d2;
+}
 
-body {
-  @apply font-sans;
+*{
+  font-family: "Open-Sans" ,sans-serif;
 }
