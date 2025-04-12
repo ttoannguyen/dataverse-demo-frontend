@@ -1,5 +1,9 @@
-/* Import Tailwind CSS */
 @import "tailwindcss";
+
+:root {
+    --text-sm: 0.875rem; /* 14px */
+    --text-sm--line-height: 1.25rem; /* ≈ 20px */
+  }
 
 @theme {
   --color-primary: #292d56;
@@ -7,6 +11,9 @@
   --color-text-header: #6393d2;
 }
 
-*{
-  font-family: "Open-Sans" ,sans-serif;
+* {
+  font-family: "Open-Sans", sans-serif;
 }
+
+
+

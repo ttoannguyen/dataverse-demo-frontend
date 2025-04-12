@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+  const [timeoutId, setTimeoutId] = useState(null);
 
   const handleMouseEnter = () => {
     if (timeoutId) {
@@ -38,7 +38,7 @@ const Nav = () => {
             onMouseLeave={handleMouseLeave}
           >
             <Link
-              to="/dataverse"
+              to="/datasets"
               className="text-amber-50 p-2  hover:bg-gray-200 hover:text-gray-500 font-medium text-lg transition-colors duration-200 flex items-center"
             >
               Datasets
@@ -66,19 +66,19 @@ const Nav = () => {
               onMouseLeave={handleMouseLeave}
             >
               <Link
-                to="/dataverse"
+                to="/datasets"
                 className="block px-4 py-2 text-black hover:bg-[#ddd] hover:text-blue-400 text-sm transition-colors"
               >
                 Data Search
               </Link>
               <Link
-                to="/dataverse/test"
+                to="/datasets/test"
                 className="block px-4 py-2 text-black hover:bg-[#ddd] hover:text-blue-400 text-sm transition-colors"
               >
                 test
               </Link>
               <Link
-                to="/dataverse/upload"
+                to="/datasets/upload"
                 className="block px-4 py-2 text-black hover:bg-[#ddd] hover:text-blue-400 text-sm transition-colors"
               >
                 test
@@ -86,7 +86,7 @@ const Nav = () => {
             </div>
           </div>
         <Link
-            to="/dashboard"
+            to="/kms"
             className="text-amber-50 p-2 hover:bg-gray-200 hover:text-gray-500 font-medium text-lg transition-colors duration-200"
           >
             KMS

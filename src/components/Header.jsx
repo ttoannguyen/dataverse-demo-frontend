@@ -1,8 +1,4 @@
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "./LanguageSwitcher";
-import { useState } from "react";
-
 const Header = () => {
   
   return (
@@ -16,7 +12,6 @@ const Header = () => {
               </h1>
             </Link>
             <div className="flex items-center space-x-4">
-              <LanguageSwitcher />
             </div>
           </div>
 
