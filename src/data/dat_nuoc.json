@@ -1,0 +1,49 @@
+[
+    {
+      "id": "sample_001",
+      "type": "soil",
+      "location": {
+        "province": "Can Tho",
+        "coordinates": {
+          "latitude": 10.0452,
+          "longitude": 105.7469
+        }
+      },
+      "sample_date": "2025-04-01",
+      "data": {
+        "organic_matter_percent": 3.2, 
+        "ph": 6.5, 
+        "salinity_percent": 0.1, 
+        "nitrogen_mg_per_kg": 120, 
+        "phosphorus_mg_per_kg": 80 
+      },
+      "metadata": {
+        "collection_method": "Field sampling",
+        "organization": "IRD",
+        "license": "CC BY 4.0"
+      }
+    },
+    {
+      "id": "sample_002",
+      "type": "water",
+      "location": {
+        "province": "Long An",
+        "coordinates": {
+          "latitude": 10.5333,
+          "longitude": 106.4167
+        }
+      },
+      "sample_date": "2025-04-01",
+      "data": {
+        "salinity_g_per_liter": 2.5, 
+        "ph": 7.0, 
+        "nitrate_mg_per_liter": 10, 
+        "water_consumption_m3_per_ha": 5000 
+      },
+      "metadata": {
+        "collection_method": "Field sampling",
+        "organization": "CIRAD",
+        "license": "CC BY 4.0"
+      }
+    }
+  ]

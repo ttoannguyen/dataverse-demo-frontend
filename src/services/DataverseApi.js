@@ -11,5 +11,10 @@ const dataverseApi = {
     console.log(response.data)
     return response.data;
   },
+  getKPIs: async () => {
+    const response = await api.get("/KPI.json");
+    console.log(response.data)
+    return response.data;
+  }
 };
 export default dataverseApi;

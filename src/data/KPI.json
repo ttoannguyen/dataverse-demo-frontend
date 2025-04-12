@@ -1,0 +1,58 @@
+[
+    {
+      "id": "kpi_001",
+      "level": "household",
+      "household_id": "HH001",
+      "location": {
+        "province": "Can Tho",
+        "district": "Ninh Kieu"
+      },
+      "date": "2025-04-01",
+      "kpis": {
+        "land_ownership": true,
+        "productivity_tons_per_ha": 5.5,
+        "income_vnd_per_year": 120000000,
+        "value_added_percent": 20,
+        "pesticide_exposure_times_per_year": 3,
+        "dietary_diversity_score": 6,
+        "women_empowerment_percent": 40,
+        "youth_employment_percent": 30,
+        "agrobiodiversity_species_count": 4,
+        "soil_health_score": 0.85, 
+        "ghg_emissions_kg_co2e_per_ha": 2000, 
+        "water_consumption_m3_per_ton": 900 
+      },
+      "metadata": {
+        "calculated_by": "KMS",
+        "model_version": "1.0",
+        "license": "CC BY 4.0"
+      }
+    },
+    {
+      "id": "kpi_002",
+      "level": "province",
+      "location": {
+        "province": "Can Tho"
+      },
+      "date": "2025-04-01",
+      "kpis": {
+        "land_ownership_percent": 75,
+        "average_productivity_tons_per_ha": 5.8,
+        "average_income_vnd_per_year": 135000000,
+        "average_value_added_percent": 22,
+        "average_pesticide_exposure_times_per_year": 2.5,
+        "average_dietary_diversity_score": 5.5,
+        "average_women_empowerment_percent": 45,
+        "average_youth_employment_percent": 25,
+        "average_agrobiodiversity_species_count": 3.5,
+        "average_soil_health_score": 0.82,
+        "average_ghg_emissions_kg_co2e_per_ha": 1900,
+        "average_water_consumption_m3_per_ton": 850
+      },
+      "metadata": {
+        "calculated_by": "KMS",
+        "model_version": "1.0",
+        "license": "CC BY 4.0"
+      }
+    }
+  ]
