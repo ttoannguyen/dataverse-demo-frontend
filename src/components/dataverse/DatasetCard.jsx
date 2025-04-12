@@ -1,21 +1,61 @@
-const DatasetCard = ({ dataset }) => {
+import { useNavigate } from "react-router-dom";
+
+const DatasetCard = ({ dataset, isExpanded, toggleExpand }) => {
+  const navigate = useNavigate();
+
+  // Truy cập dữ liệu từ metadata
+  const title = dataset.metadata.title;
+  const description = dataset.metadata.description;
+  const keywords = dataset.metadata.keywords || []; // Đảm bảo keywords là mảng, tránh lỗi
+  const organization = dataset.metadata.organization || "Unknown"; // Thay authors bằng organization
+
   return (
-    <div className="border p-4 rounded-xl shadow bg-white hover:bg-gray-50 transition">
-      <h3 className="text-xl font-semibold text-green-800">{dataset.title}</h3>
-      <p className="text-sm text-gray-600 italic mb-2">
-        {dataset.authors.map((a) => a.name).join(", ")}
-      </p>
-      <p className="text-gray-700 mb-2">{dataset.description}</p>
-      <div className="flex flex-wrap gap-2 text-sm">
-        {dataset.keywords.map((kw, i) => (
-          <span
-            key={i}
-            className="bg-green-100 text-green-700 px-2 py-1 rounded-full"
-          >
-            #{kw}
-          </span>
-        ))}
+    <div className="border p-4  bg-white hover:bg-gray-50 transition">
+      {/* Tiêu đề điều hướng đến trang chi tiết dataset */}
+      <h3
+        onClick={() => navigate(`/datasets/${dataset.id}`)} 
+        className="hover:underline-offset-0 cursor-pointer text-xl font-semibold text-green-800"
+      >
+        {title}
+      </h3>
+
+      {/* Hiển thị tổ chức thay vì authors */}
+      <p className="text-sm text-gray-600 italic mb-2">Published by: {organization}</p>
+
+      {/* Mô tả dataset */}
+      <p className="text-gray-700 mb-2">{description}</p>
+
+      {/* Hiển thị từ khóa */}
+      <div className="flex flex-wrap gap-2 text-sm mb-2">
+        {keywords.length > 0 ? (
+          keywords.map((kw, i) => (
+            <span key={i} className="bg-green-100 text-green-700 px-2 py-1 rounded-full">
+              #{kw}
+            </span>
+          ))
+        ) : (
+          <span className="text-gray-500">No keywords available</span>
+        )}
       </div>
+
+      {/* Nút mở rộng/thu gọn */}
+      <button
+        onClick={() => toggleExpand(dataset.id)}
+        className="text-green-600 hover:underline text-sm"
+      >
+        {isExpanded ? "Hide Details" : "Show Details"}
+      </button>
+
+      {/* Hiển thị chi tiết khi mở rộng */}
+      {isExpanded && (
+        <div className="mt-2 p-2 bg-gray-100 rounded">
+          <p><strong>Type:</strong> {dataset.type}</p>
+          <p><strong>Country:</strong> {dataset.metadata.country}</p>
+          <p><strong>Language:</strong> {dataset.metadata.language}</p>
+          <p><strong>License:</strong> {dataset.metadata.license}</p>
+          <p><strong>Total Records:</strong> {dataset.metadata.total_records}</p>
+        </div>
+      )}
     </div>
   );
 };

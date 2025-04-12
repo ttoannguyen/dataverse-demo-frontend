@@ -41,46 +41,10 @@ export default function DataversePage() {
     []
   );
 
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     try {
-  //       const response = await dataverseApi.getData();
-  //       const fetchedDatasets = response;
-  //       console.log(fetchedDatasets)
-  //       setDatasets(fetchedDatasets);
-  //       setFiltered(fetchedDatasets);
-
-  //       const countries = [...new Set(fetchedDatasets.map(ds => ds.metadata.country))];
-  //       const languages = [...new Set(fetchedDatasets.map(ds => ds.metadata.language))];
-  //       const formats = [...new Set(fetchedDatasets.map(ds => ds.metadata.format))];
-  //       const organizations = [...new Set(fetchedDatasets.map(ds => ds.metadata.organization))];
-  //       const topics = [...new Set(fetchedDatasets.map(ds => ds.metadata.topic))];
-  //       const licenses = [...new Set(fetchedDatasets.map(ds => ds.metadata.license))];
-
-  //       setFilterOptions({
-  //         datasets: fetchedDatasets, // Truyền danh sách datasets để tính số lượng
-  //         countries,
-  //         languages,
-  //         formats,
-  //         organizations,
-  //         topics,
-  //         licenses,
-  //       });
-
-  //       setLoading(false);
-  //     } catch (error) {
-  //       setError(error.message);
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   getData();
-  // }, []);
-
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await dataverseApi.getData();
+        const response = await dataverseApi.getDatas();
         
         // Trích xuất mảng datasets từ response
         let fetchedDatasets;
@@ -157,7 +121,7 @@ export default function DataversePage() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-6 bg-gray-50 min-h-screen">
-      <aside className="bg-white p-4 rounded shadow-sm md:col-span-1 border">
+      <aside className="bg-white p-4 shadow-sm md:col-span-1 border">
         <SidebarFilter filters={filters} setFilters={setFilters} filterOptions={filterOptions} />
         <button
           onClick={() =>
