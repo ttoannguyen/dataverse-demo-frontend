@@ -23,10 +23,10 @@ const Nav = () => {
   return (
     <div className="">
       <nav className="bg-nav">
-        <div className="max-w-7xl mx-auto flex items-center h-14 space-x-8 px-4">
+        <div className="max-w-7xl mx-auto flex items-center h-14 px-4">
           <Link
             to="/"
-            className="text-amber-50 p-2 hover:bg-gray-200 hover:text-gray-500 font-medium text-lg transition-colors duration-200"
+            className="text-amber-50 p-2 px-5 hover:bg-gray-200 hover:text-gray-500 font-medium text-lg transition-colors duration-200"
           >
             Home
           </Link>
@@ -39,7 +39,7 @@ const Nav = () => {
           >
             <Link
               to="/datasets"
-              className="text-amber-50 p-2  hover:bg-gray-200 hover:text-gray-500 font-medium text-lg transition-colors duration-200 flex items-center"
+              className="text-amber-50 p-2 px-5 hover:bg-gray-200 hover:text-gray-500 font-medium text-lg transition-colors duration-200 flex items-center"
             >
               Datasets
               <svg
@@ -59,7 +59,7 @@ const Nav = () => {
             </Link>
 
             <div
-              className={`absolute top-full left-0 w-48 bg-[#eee] py-2 z-10 transition-opacity duration-300 ease-in-out ${
+              className={`absolute top-full left-0 w-48 bg-[#eee] py-2  z-10 transition-opacity duration-300 ease-in-out ${
                 isDropdownOpen ? "opacity-100" : "opacity-0 pointer-events-none"
               }`}
               onMouseEnter={handleMouseEnter}
@@ -87,7 +87,7 @@ const Nav = () => {
           </div>
         <Link
             to="/kms"
-            className="text-amber-50 p-2 hover:bg-gray-200 hover:text-gray-500 font-medium text-lg transition-colors duration-200"
+            className="text-amber-50 p-2 px-5 hover:bg-gray-200 hover:text-gray-500 font-medium text-lg transition-colors duration-200"
           >
             KMS
           </Link>

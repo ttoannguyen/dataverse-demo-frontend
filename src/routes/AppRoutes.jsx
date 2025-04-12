@@ -18,7 +18,7 @@ const router = createBrowserRouter([
                 element : <DataversePage/>
             },
             {
-                path: "/fms",
+                path: "/kms",
                 element : <KMSPage/>
             }
         ]
