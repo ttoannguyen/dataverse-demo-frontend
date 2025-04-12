@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { debounce } from "lodash";
-import SidebarFilter from "../components/dataverse/SideBarFilter";
+import SidebarFilter from "../components/dataverse/SidebarFilter";
 import DatasetList from "../components/dataverse/DatasetList";
 import SearchBar from "../components/dataverse/SearchBar";
 import { filterDatasets } from "../lib/filterDatasets";
@@ -103,7 +103,7 @@ export default function DataversePage() {
     );
   }
 
-  
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-6 bg-gray-50 min-h-screen">
       <aside className="bg-white p-4 rounded shadow-sm md:col-span-1 border">
