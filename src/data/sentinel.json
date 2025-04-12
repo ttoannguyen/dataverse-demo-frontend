@@ -1,0 +1,48 @@
+[
+  {
+    "id": "remote_sensing_001",
+    "source": "Sentinel-1",
+    "location": {
+      "province": "Can Tho",
+      "coordinates": {
+        "latitude": 10.0452,
+        "longitude": 105.7469
+      }
+    },
+    "date": "2025-04-01",
+    "measurements": {
+      "ndvi": 0.72,
+      "soil_moisture_percent": 65,
+      "salinity_index": 0.15,
+      "biomass_kg_per_ha": 4500
+    },
+    "metadata": {
+      "resolution_m": 10,
+      "provider": "Copernicus",
+      "license": "Open Access"
+    }
+  },
+  {
+    "id": "remote_sensing_002",
+    "source": "Sentinel-1",
+    "location": {
+      "province": "Long An",
+      "coordinates": {
+        "latitude": 10.5333,
+        "longitude": 106.4167
+      }
+    },
+    "date": "2025-04-01",
+    "measurements": {
+      "ndvi": 0.68,
+      "soil_moisture_percent": 60,
+      "salinity_index": 0.2,
+      "biomass_kg_per_ha": 4200
+    },
+    "metadata": {
+      "resolution_m": 10,
+      "provider": "Copernicus",
+      "license": "Open Access"
+    }
+  }
+]

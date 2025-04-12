@@ -7,7 +7,7 @@ const dataverseApi = {
     return response.data;
   },
   getData: async () => {
-    const response = await api.get("/data");
+    const response = await api.get("/data.json");
     console.log(response.data)
     return response.data;
   },

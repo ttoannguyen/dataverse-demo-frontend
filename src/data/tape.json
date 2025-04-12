@@ -1,0 +1,70 @@
+[
+    {
+      "id": "survey_001",
+      "household_id": "HH001",
+      "location": {
+        "province": "Can Tho",
+        "district": "Ninh Kieu",
+        "coordinates": {
+          "latitude": 10.0452,
+          "longitude": 105.7469
+        }
+      },
+      "survey_date": "2025-04-01",
+      "data": {
+        "land_ownership": true, 
+        "productivity_tons_per_ha": 5.5, 
+        "income_vnd_per_year": 120000000, 
+        "value_added_percent": 20, 
+        "pesticide_exposure_times_per_year": 3, 
+        "dietary_diversity_score": 6, 
+        "women_empowerment_percent": 40, 
+        "youth_employment_percent": 30,
+        "agrobiodiversity_species_count": 4, 
+        "soil_health": {
+          "organic_matter_percent": 3.2, 
+          "ph": 6.5, 
+          "salinity_percent": 0.1 
+        }
+      },
+      "metadata": {
+        "collection_method": "In-person interview",
+        "organization": "IRD",
+        "license": "CC BY 4.0"
+      }
+    },
+    {
+      "id": "survey_002",
+      "household_id": "HH002",
+      "location": {
+        "province": "Long An",
+        "district": "Tan An",
+        "coordinates": {
+          "latitude": 10.5333,
+          "longitude": 106.4167
+        }
+      },
+      "survey_date": "2025-04-01",
+      "data": {
+        "land_ownership": false,
+        "productivity_tons_per_ha": 6.0,
+        "income_vnd_per_year": 150000000,
+        "value_added_percent": 25,
+        "pesticide_exposure_times_per_year": 2,
+        "dietary_diversity_score": 5,
+        "women_empowerment_percent": 50,
+        "youth_employment_percent": 20,
+        "agrobiodiversity_species_count": 3,
+        "soil_health": {
+          "organic_matter_percent": 2.8,
+          "ph": 6.0,
+          "salinity_percent": 0.15
+        }
+      },
+      "metadata": {
+        "collection_method": "In-person interview",
+        "organization": "CIRAD",
+        "license": "CC BY 4.0"
+      }
+    }
+  ]
