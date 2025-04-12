@@ -1,6 +1,6 @@
 import { FaDatabase, FaFileAlt, FaGavel, FaUser, FaMapMarkerAlt } from "react-icons/fa";
 
-export default function SidebarFilter({ filters, setFilters, filterOptions }) {
+const SidebarFilter = ({ filters, setFilters, filterOptions }) =>{
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters((prev) => ({ ...prev, [name]: value }));
@@ -150,3 +150,5 @@ export default function SidebarFilter({ filters, setFilters, filterOptions }) {
     </div>
   );
 }
+
+export default SidebarFilter
