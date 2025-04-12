@@ -2,7 +2,7 @@ import api from "./Api"
 
 const dataverseApi = {
   getDatas: async () => {
-    const response = await api.get("/datasets.json");
+    const response = await api.get("/mockDatasets.json");
     console.log(response.data)
     return response.data;
   },
