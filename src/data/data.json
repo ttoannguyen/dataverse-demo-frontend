@@ -1,0 +1,155 @@
+[
+    {
+      "id": "dataset_001",
+      "type": "population",
+      "metadata": {
+        "dataset_id": "doi:10.5072/FK2/DATASET1",
+        "title": "Khảo sát Dân số TP.HCM",
+        "description": "Dữ liệu khảo sát dân số năm 2025 tại TP.HCM",
+        "year": 2025,
+        "collection_method": "In-person interviews",
+        "total_records": 5000,
+        "country": "Vietnam",
+        "language": "Vietnamese",
+        "format": "JSON",
+        "organization": "Đại học XYZ",
+        "topic": "Demography",
+        "license": "CC BY 4.0",
+        "keywords": ["dân số", "TP.HCM"]
+      },
+      "data": [
+        {
+          "individual_id": "P001",
+          "district": "Quận 1",
+          "age": 34,
+          "gender": "Male",
+          "occupation": "Office worker",
+          "household_size": 4,
+          "income_vnd_per_month": 15000000
+        },
+        {
+          "individual_id": "P002",
+          "district": "Quận 7",
+          "age": 28,
+          "gender": "Female",
+          "occupation": "Teacher",
+          "household_size": 3,
+          "income_vnd_per_month": 12000000
+        }
+      ]
+    },
+    {
+      "id": "dataset_002",
+      "type": "weather",
+      "metadata": {
+        "dataset_id": "doi:10.5072/FK2/DATASET2",
+        "title": "Dữ liệu Khí tượng Đồng bằng Sông Cửu Long",
+        "description": "Tập hợp dữ liệu đo nhiệt độ, độ ẩm và lượng mưa giai đoạn 2020–2024 từ các trạm khí tượng tại khu vực ĐBSCL.",
+        "period": "2020-2024",
+        "keywords": ["khí tượng", "ĐBSCL", "thời tiết"],
+        "total_records": 2,
+        "country": "Vietnam",
+        "language": "Vietnamese",
+        "format": "JSON",
+        "organization": "Trung tâm Dự báo KTTV",
+        "topic": "Meteorology",
+        "license": "CC BY 4.0"
+      },
+      "data": [
+        {
+          "station_id": "WS001",
+          "location": "Can Tho",
+          "coordinates": {
+            "latitude": 10.0452,
+            "longitude": 105.7469
+          },
+          "measurements": [
+            {
+              "date": "2023-06-01",
+              "temperature_celsius": 29.8,
+              "humidity_percent": 82,
+              "rainfall_mm": 15
+            },
+            {
+              "date": "2023-06-02",
+              "temperature_celsius": 30.1,
+              "humidity_percent": 80,
+              "rainfall_mm": 10
+            }
+          ]
+        },
+        {
+          "station_id": "WS002",
+          "location": "Long An",
+          "coordinates": {
+            "latitude": 10.5333,
+            "longitude": 106.4167
+          },
+          "measurements": [
+            {
+              "date": "2023-06-01",
+              "temperature_celsius": 29.5,
+              "humidity_percent": 85,
+              "rainfall_mm": 20
+            },
+            {
+              "date": "2023-06-02",
+              "temperature_celsius": 29.7,
+              "humidity_percent": 83,
+              "rainfall_mm": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dataset_003",
+      "type": "agriculture",
+      "metadata": {
+        "dataset_id": "doi:10.5072/FK2/DATASET3",
+        "title": "Dữ liệu Nông nghiệp tại Đồng bằng Sông Cửu Long",
+        "description": "Dữ liệu về nông dân và sản lượng cây trồng tại ĐBSCL năm 2023",
+        "period": "2023",
+        "keywords": ["nông nghiệp", "ĐBSCL", "lúa"],
+        "total_records": 2,
+        "country": "Vietnam",
+        "language": "Vietnamese",
+        "format": "JSON",
+        "organization": "Sở Nông nghiệp",
+        "topic": "Agriculture",
+        "license": "CC BY 4.0"
+      },
+      "data": [
+        {
+          "farmer_id": "F001",
+          "name": "Nguyen Van B",
+          "location": "Can Tho",
+          "farm_size_hectares": 2.0,
+          "crops": [
+            {
+              "crop_type": "Rice",
+              "variety": "IR64",
+              "season": "Summer-Autumn 2023",
+              "yield_tons_per_hectare": 5.5,
+              "irrigation_method": "Flood irrigation"
+            }
+          ]
+        },
+        {
+          "farmer_id": "F002",
+          "name": "Tran Thi D",
+          "location": "Long An",
+          "farm_size_hectares": 1.5,
+          "crops": [
+            {
+              "crop_type": "Rice",
+              "variety": "OM5451",
+              "season": "Winter-Spring 2023",
+              "yield_tons_per_hectare": 6.0,
+              "irrigation_method": "Drip irrigation"
+            }
+          ]
+        }
+      ]
+    }
+  ]

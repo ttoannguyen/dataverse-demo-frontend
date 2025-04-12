@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_BASE_URL = "https://67f9f9e4094de2fe6ea2cd03.mockapi.io/api/v1";
+// const API_BASE_URL = "https://67f9f9e4094de2fe6ea2cd03.mockapi.io/api/v1";
+const API_BASE_URL = "https://raw.githubusercontent.com/ttoannguyen/dataverse-demo-frontend/refs/heads/main/src/data";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
