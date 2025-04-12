@@ -15,6 +15,11 @@ const dataverseApi = {
     const response = await api.get("/KPI.json");
     console.log(response.data)
     return response.data;
+  },
+  getRemoteSensingData: async () => {
+    const response = await api.get("/sentinel.json");
+    console.log(response.data)
+    return response.data;
   }
 };
 export default dataverseApi;
