@@ -1,10 +1,10 @@
 import { useEffect, useState, useCallback } from "react";
 import { debounce } from "lodash";
-import SidebarFilter from "../components/dataverse/SidebarFilter";
+import SidebarFilter from "../components/dataverse/SideBarFilter";
 import DatasetList from "../components/dataverse/DatasetList";
 import SearchBar from "../components/dataverse/SearchBar";
 import { filterDatasets } from "../lib/filterDatasets";
-import {dataverseApi} from "../services/DataverseApi";
+import dataverseApi from "../services/DataverseApi";
 
 export default function DataversePage() {
   const [datasets, setDatasets] = useState([]);
@@ -21,6 +21,15 @@ export default function DataversePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [filterOptions, setFilterOptions] = useState({
+    datasets: [],
+    countries: [],
+    languages: [],
+    formats: [],
+    organizations: [],
+    topics: [],
+    licenses: [],
+  });
   const datasetsPerPage = 5;
 
   const debouncedFilter = useCallback(
@@ -32,32 +41,6 @@ export default function DataversePage() {
     []
   );
 
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     try {
-  //       const response = await dataverseApi.getData();
-  //       const fetchedDatasets = response.data.datasets;
-  //       setDatasets(fetchedDatasets);
-  //       setFiltered(fetchedDatasets);
-  //       setLoading(false);
-  //     } catch (error) {
-  //       setError(error.message);
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   getData();
-  // }, []);
-
-  const [filterOptions, setFilterOptions] = useState({
-    countries: [],
-    languages: [],
-    formats: [],
-    organizations: [],
-    topics: [],
-    licenses: [],
-  });
-  
   useEffect(() => {
     const getData = async () => {
       try {
@@ -65,7 +48,7 @@ export default function DataversePage() {
         const fetchedDatasets = response.data.datasets;
         setDatasets(fetchedDatasets);
         setFiltered(fetchedDatasets);
-  
+
         // Tính toán các tùy chọn bộ lọc
         const countries = [...new Set(fetchedDatasets.map(ds => ds.metadata.country))];
         const languages = [...new Set(fetchedDatasets.map(ds => ds.metadata.language))];
@@ -73,8 +56,9 @@ export default function DataversePage() {
         const organizations = [...new Set(fetchedDatasets.map(ds => ds.metadata.organization))];
         const topics = [...new Set(fetchedDatasets.map(ds => ds.metadata.topic))];
         const licenses = [...new Set(fetchedDatasets.map(ds => ds.metadata.license))];
-  
+
         setFilterOptions({
+          datasets: fetchedDatasets, // Truyền danh sách datasets để tính số lượng
           countries,
           languages,
           formats,
@@ -82,14 +66,14 @@ export default function DataversePage() {
           topics,
           licenses,
         });
-  
+
         setLoading(false);
       } catch (error) {
         setError(error.message);
         setLoading(false);
       }
     };
-  
+
     getData();
   }, []);
 
@@ -99,7 +83,6 @@ export default function DataversePage() {
     }
   }, [filters, datasets, debouncedFilter]);
 
-  // Tính toán dataset hiển thị trên trang hiện tại
   const indexOfLastDataset = currentPage * datasetsPerPage;
   const indexOfFirstDataset = indexOfLastDataset - datasetsPerPage;
   const currentDatasets = filtered.slice(indexOfFirstDataset, indexOfLastDataset);
@@ -124,7 +107,6 @@ export default function DataversePage() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-6 bg-gray-50 min-h-screen">
       <aside className="bg-white p-4 rounded shadow-sm md:col-span-1 border">
-        <h2 className="font-semibold text-gray-700 mb-4">Search Result For</h2>
         <SidebarFilter filters={filters} setFilters={setFilters} filterOptions={filterOptions} />
         <button
           onClick={() =>
@@ -145,9 +127,8 @@ export default function DataversePage() {
       </aside>
 
       <section className="md:col-span-3">
-      
+        <SearchBar keyword={filters.keyword} setFilters={setFilters} />
         <DatasetList datasets={currentDatasets} />
-        {/* Phân trang */}
         {filtered.length > datasetsPerPage && (
           <div className="flex justify-center mt-4 space-x-2">
             <button

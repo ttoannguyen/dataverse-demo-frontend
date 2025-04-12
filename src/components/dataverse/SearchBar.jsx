@@ -1,4 +1,4 @@
-export default function SearchBar({ keyword, setFilters }) {
+ const SearchBar = ({ keyword, setFilters }) => {
   const handleSearch = (e) => {
     setFilters(prev => ({ ...prev, keyword: e.target.value }));
   };
@@ -15,3 +15,5 @@ export default function SearchBar({ keyword, setFilters }) {
     </div>
   );
 }
+
+export default SearchBar;

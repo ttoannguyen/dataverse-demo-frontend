@@ -1,16 +1,14 @@
 export const filterDatasets = (datasets, filters) => {
-  return datasets.filter((dataset) => {
+  return datasets.filter(dataset => {
     const metadata = dataset.metadata;
 
+    // Lọc theo danh mục
+    const categoryMatch = filters.category === "Datasets" || !filters.category;
+
     const keywordMatch = filters.keyword
-      ? metadata.title?.toLowerCase().includes(filters.keyword.toLowerCase()) ||
-        metadata.description
-          ?.toLowerCase()
-          .includes(filters.keyword.toLowerCase()) ||
-        (metadata.keywords &&
-          metadata.keywords.some((kw) =>
-            kw.toLowerCase().includes(filters.keyword.toLowerCase())
-          ))
+      ? (metadata.title?.toLowerCase().includes(filters.keyword.toLowerCase()) ||
+         metadata.description?.toLowerCase().includes(filters.keyword.toLowerCase()) ||
+         (metadata.keywords && metadata.keywords.some(kw => kw.toLowerCase().includes(filters.keyword.toLowerCase()))))
       : true;
 
     const countryMatch = filters.country
@@ -26,8 +24,7 @@ export const filterDatasets = (datasets, filters) => {
       : true;
 
     const organizationMatch = filters.organization
-      ? metadata.organization?.toLowerCase() ===
-        filters.organization.toLowerCase()
+      ? metadata.organization?.toLowerCase() === filters.organization.toLowerCase()
       : true;
 
     const topicMatch = filters.topic
@@ -39,6 +36,7 @@ export const filterDatasets = (datasets, filters) => {
       : true;
 
     return (
+      categoryMatch &&
       keywordMatch &&
       countryMatch &&
       languageMatch &&

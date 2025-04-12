@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function DatasetList({ datasets }) {
+ const DatasetList =({ datasets }) =>{
   const [expandedDataset, setExpandedDataset] = useState(null);
 
   const toggleExpand = (datasetId) => {
@@ -91,3 +91,4 @@ export default function DatasetList({ datasets }) {
     </div>
   );
 }
+export default DatasetList;

@@ -1,8 +1,20 @@
 import api from "./Api";
+import mockDatasets from "../data/mockDatasets.json";
 
-export const dataverseApi = {
+const dataverseApi = {
+  // getData: async () => {
+  //   const response = await api.get("/data/datasets.json");
+  //   return response;
+  // },
+
+  // src/services/DataverseApi.js
+
   getData: async () => {
-    const response = await api.get("/data/datasets.json");
-    return response;
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ data: mockDatasets });
+      }, 500); 
+    });
   },
 };
+export default dataverseApi;
