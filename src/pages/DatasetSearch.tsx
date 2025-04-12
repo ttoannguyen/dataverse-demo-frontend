@@ -1,29 +1,45 @@
-import Header from '../components/Header';
+import React from "react";
+import DatasetCard from "../components/DatasetsCard";
 
-export default function Dataverse() {
+type DatasetRaw = {
+  datasetVersion: {
+    id: number;
+    datasetPersistentId: string;
+    metadataBlocks: {
+      citation: {
+        fields: any[];
+      };
+    };
+  };
+};
+
+function extractField(fields: any[], typeName: string) {
+  return fields.find((f) => f.typeName === typeName)?.value;
+}
+
+function extractDatasetData(raw: DatasetRaw) {
+  const fields = raw.datasetVersion.metadataBlocks.citation.fields;
+  return {
+    id: raw.datasetVersion.id,
+    persistentId: raw.datasetVersion.datasetPersistentId,
+    title: extractField(fields, "title"),
+    description: extractField(fields, "dsDescription")?.[0]?.dsDescriptionValue?.value || "",
+    authors: extractField(fields, "author") || [],
+    keywords: extractField(fields, "keyword") || [],
+  };
+}
+
+type Props = {
+  datasets: DatasetRaw[];
+};
+
+export default function DataverseSearch({ datasets }: Props) {
   return (
-    <div>
-      <main className="p-4">
-        <h2 className="text-2xl font-bold mb-4 text-primary">Tìm kiếm dữ liệu</h2>
-
-        {/* Filter */}
-        <div className="mb-4">
-          <input type="text" placeholder="Tìm theo tên..." className="border p-2 w-full md:w-1/2 rounded" />
-        </div>
-
-        {/* Danh sách dữ liệu */}
-        <div className="grid gap-4">
-          <div className="bg-white p-4 shadow rounded-xl">
-            <h4 className="font-bold">Bộ dữ liệu 1</h4>
-            <p className="text-sm text-gray-600">Mô tả ngắn gọn...</p>
-            <button className="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-green-700">
-              Tải xuống
-            </button>
-          </div>
-
-          {/* thêm nhiều dataset ở đây */}
-        </div>
-      </main>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {datasets.map((d, i) => {
+        const data = extractDatasetData(d);
+        return <DatasetCard key={i} {...data} />;
+      })}
     </div>
   );
 }

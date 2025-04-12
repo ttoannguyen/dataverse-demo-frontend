@@ -4,6 +4,7 @@ import Dashboard from "../pages/Dashboard";
 import Dataverse from "../pages/DatasetSearch";
 import Layout from "@/layout/Layout";
 import ErrorPage from "@/components/ErrorPage";
+import DataversePage from "@/pages/DataversePage";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
       {
         path: "dataverse",
         errorElement: <ErrorPage />,
-        element: <Dataverse />,
+        element: <DataversePage />,
       },
       {
         path: "*", // catch-all cho 404

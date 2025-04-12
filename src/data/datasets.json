@@ -1,0 +1,150 @@
+[
+  {
+    "datasetVersion": {
+      "id": 100,
+      "datasetPersistentId": "doi:10.5072/FK2/DATASET1",
+      "versionNumber": 1,
+      "versionMinorNumber": 0,
+      "versionState": "PUBLISHED",
+      "createTime": "2025-04-11T17:57:47.197501Z",
+      "lastUpdateTime": "2025-04-11T17:57:47.197512Z",
+      "metadataBlocks": {
+        "citation": {
+          "fields": [
+            {
+              "typeName": "title",
+              "value": "Khảo sát Dân số TP.HCM"
+            },
+            {
+              "typeName": "author",
+              "value": [
+                {
+                  "authorName": {
+                    "value": "Nguyen Van A"
+                  },
+                  "authorAffiliation": {
+                    "value": "Đại học XYZ"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "dsDescription",
+              "value": [
+                {
+                  "dsDescriptionValue": {
+                    "value": "Dữ liệu khảo sát dân số năm 2025 tại TP.HCM"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "datasetVersion": {
+      "id": 101,
+      "datasetPersistentId": "doi:10.5072/FK2/DATASET2",
+      "versionNumber": 1,
+      "versionMinorNumber": 0,
+      "versionState": "PUBLISHED",
+      "createTime": "2025-04-11T17:57:47.197517Z",
+      "lastUpdateTime": "2025-04-11T17:57:47.197520Z",
+      "metadataBlocks": {
+        "citation": {
+          "fields": [
+            {
+              "typeName": "title",
+              "value": "Dữ liệu Khí tượng Đồng bằng Sông Cửu Long"
+            },
+            {
+              "typeName": "author",
+              "value": [
+                {
+                  "authorName": {
+                    "value": "Le Thi C"
+                  },
+                  "authorAffiliation": {
+                    "value": "Trung tâm Dự báo KTTV"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "dsDescription",
+              "value": [
+                {
+                  "dsDescriptionValue": {
+                    "value": "Tập hợp dữ liệu đo nhiệt độ, độ ẩm và lượng mưa giai đoạn 2020–2024 từ các trạm khí tượng tại khu vực ĐBSCL."
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "keyword",
+              "value": ["khí tượng", "ĐBSCL", "thời tiết"]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "datasetVersion": {
+      "id": 102,
+      "datasetPersistentId": "doi:10.5072/FK2/DATASET3",
+      "versionNumber": 1,
+      "versionMinorNumber": 0,
+      "versionState": "PUBLISHED",
+      "createTime": "2025-04-11T17:57:47.197524Z",
+      "lastUpdateTime": "2025-04-11T17:57:47.197527Z",
+      "metadataBlocks": {
+        "citation": {
+          "fields": [
+            {
+              "typeName": "title",
+              "value": "Sản lượng Lúa tại tỉnh An Giang (2019–2023)"
+            },
+            {
+              "typeName": "author",
+              "value": [
+                {
+                  "authorName": {
+                    "value": "Pham Van D"
+                  },
+                  "authorAffiliation": {
+                    "value": "Sở Nông nghiệp An Giang"
+                  }
+                },
+                {
+                  "authorName": {
+                    "value": "Tran Thi E"
+                  },
+                  "authorAffiliation": {
+                    "value": "Viện Khoa học Nông nghiệp Việt Nam"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "dsDescription",
+              "value": [
+                {
+                  "dsDescriptionValue": {
+                    "value": "Số liệu thống kê sản lượng lúa từng vụ từ năm 2019 đến 2023, chia theo huyện, xã tại tỉnh An Giang."
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "keyword",
+              "value": ["lúa", "nông nghiệp", "An Giang"]
+            }
+          ]
+        }
+      }
+    }
+  }
+]
