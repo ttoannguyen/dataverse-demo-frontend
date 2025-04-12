@@ -1,4 +1,4 @@
-import api from "./Api";
+
 import mockDatasets from "../data/mockDatasets.json";
 
 const dataverseApi = {
