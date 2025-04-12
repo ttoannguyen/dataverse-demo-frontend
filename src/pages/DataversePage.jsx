@@ -36,7 +36,7 @@ export default function DataversePage() {
     debounce((datasets, filters) => {
       const filteredData = filterDatasets(datasets, filters);
       setFiltered(filteredData);
-      setCurrentPage(1); // Reset về trang đầu khi lọc
+      setCurrentPage(1); 
     }, 300),
     []
   );
@@ -49,7 +49,6 @@ export default function DataversePage() {
         setDatasets(fetchedDatasets);
         setFiltered(fetchedDatasets);
 
-        // Tính toán các tùy chọn bộ lọc
         const countries = [...new Set(fetchedDatasets.map(ds => ds.metadata.country))];
         const languages = [...new Set(fetchedDatasets.map(ds => ds.metadata.language))];
         const formats = [...new Set(fetchedDatasets.map(ds => ds.metadata.format))];
