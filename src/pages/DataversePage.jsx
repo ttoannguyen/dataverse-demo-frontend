@@ -41,23 +41,74 @@ export default function DataversePage() {
     []
   );
 
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     try {
+  //       const response = await dataverseApi.getData();
+  //       const fetchedDatasets = response;
+  //       console.log(fetchedDatasets)
+  //       setDatasets(fetchedDatasets);
+  //       setFiltered(fetchedDatasets);
+
+  //       const countries = [...new Set(fetchedDatasets.map(ds => ds.metadata.country))];
+  //       const languages = [...new Set(fetchedDatasets.map(ds => ds.metadata.language))];
+  //       const formats = [...new Set(fetchedDatasets.map(ds => ds.metadata.format))];
+  //       const organizations = [...new Set(fetchedDatasets.map(ds => ds.metadata.organization))];
+  //       const topics = [...new Set(fetchedDatasets.map(ds => ds.metadata.topic))];
+  //       const licenses = [...new Set(fetchedDatasets.map(ds => ds.metadata.license))];
+
+  //       setFilterOptions({
+  //         datasets: fetchedDatasets, // Truyền danh sách datasets để tính số lượng
+  //         countries,
+  //         languages,
+  //         formats,
+  //         organizations,
+  //         topics,
+  //         licenses,
+  //       });
+
+  //       setLoading(false);
+  //     } catch (error) {
+  //       setError(error.message);
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   getData();
+  // }, []);
+
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await dataverseApi.getData();
-        const fetchedDatasets = response.data.datasets;
+        
+        // Trích xuất mảng datasets từ response
+        let fetchedDatasets;
+        if (Array.isArray(response)) {
+          fetchedDatasets = response[0]?.datasets || [];
+        } else {
+          fetchedDatasets = response.datasets || [];
+        }
+        
+        // Đảm bảo fetchedDatasets là mảng
+        if (!Array.isArray(fetchedDatasets)) {
+          fetchedDatasets = [];
+        }
+  
+        console.log(fetchedDatasets);
         setDatasets(fetchedDatasets);
         setFiltered(fetchedDatasets);
-
-        const countries = [...new Set(fetchedDatasets.map(ds => ds.metadata.country))];
-        const languages = [...new Set(fetchedDatasets.map(ds => ds.metadata.language))];
-        const formats = [...new Set(fetchedDatasets.map(ds => ds.metadata.format))];
-        const organizations = [...new Set(fetchedDatasets.map(ds => ds.metadata.organization))];
-        const topics = [...new Set(fetchedDatasets.map(ds => ds.metadata.topic))];
-        const licenses = [...new Set(fetchedDatasets.map(ds => ds.metadata.license))];
-
+  
+        // Trích xuất các giá trị duy nhất từ metadata
+        const countries = [...new Set(fetchedDatasets.map(ds => ds.metadata?.country).filter(Boolean))];
+        const languages = [...new Set(fetchedDatasets.map(ds => ds.metadata?.language).filter(Boolean))];
+        const formats = [...new Set(fetchedDatasets.map(ds => ds.metadata?.format).filter(Boolean))];
+        const organizations = [...new Set(fetchedDatasets.map(ds => ds.metadata?.organization).filter(Boolean))];
+        const topics = [...new Set(fetchedDatasets.map(ds => ds.metadata?.topic).filter(Boolean))];
+        const licenses = [...new Set(fetchedDatasets.map(ds => ds.metadata?.license).filter(Boolean))];
+  
         setFilterOptions({
-          datasets: fetchedDatasets, // Truyền danh sách datasets để tính số lượng
+          datasets: fetchedDatasets,
           countries,
           languages,
           formats,
@@ -65,14 +116,14 @@ export default function DataversePage() {
           topics,
           licenses,
         });
-
+  
         setLoading(false);
       } catch (error) {
-        setError(error.message);
+        setError(error.message || 'Không thể tải dữ liệu');
         setLoading(false);
       }
     };
-
+  
     getData();
   }, []);
 
