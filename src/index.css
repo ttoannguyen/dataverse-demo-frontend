@@ -6,9 +6,10 @@
   }
 
 @theme {
-  --color-primary: #292d56;
+  --color-primary: #f8f8f8;
   --color-nav: #373c6a;
-  --color-text-header: #6393d2;
+  --color-header: #666;
+  --color-header-hover: #333;
 }
 
 * {

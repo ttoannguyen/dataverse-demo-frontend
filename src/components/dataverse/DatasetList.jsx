@@ -4,12 +4,11 @@ import DatasetCard from "./DatasetCard";
 const DatasetList = ({ datasets }) => {
   const [expandedDataset, setExpandedDataset] = useState(null);
 
-  // Hàm để mở rộng/thu gọn dataset
   const toggleExpand = (datasetId) => {
     setExpandedDataset(expandedDataset === datasetId ? null : datasetId);
   };
 
-  console.log("Datasets:", datasets); // Để debug dữ liệu đầu vào
+  console.log("Datasets:", datasets); 
 
   return (
     <div>
@@ -20,7 +19,7 @@ const DatasetList = ({ datasets }) => {
         {datasets.length > 0 ? (
           datasets.map((dataset) => (
             <DatasetCard
-              key={dataset.id} // Đảm bảo key duy nhất cho mỗi dataset
+              key={dataset.id} 
               dataset={dataset}
               isExpanded={expandedDataset === dataset.id}
               toggleExpand={toggleExpand}

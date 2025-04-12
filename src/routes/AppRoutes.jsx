@@ -1,8 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
-import Home from "../pages/Home";
 import DataversePage from "../pages/DataversePage";
-import KMSPage from "../pages/KMSPage";
 import DatasetDetail from "../components/dataverse/DatasetDetail";
 
 const router = createBrowserRouter([
@@ -12,19 +10,15 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <DataversePage />,
       },
       {
-        path: "datasets",
+        path: "dataverse",
         element: <DataversePage />,
       },
       {
         path: "datasets/:datasets",
         element: <DatasetDetail />,
-      },
-      {
-        path: "/kms",
-        element: <KMSPage />,
       },
     ],
   },

@@ -3,15 +3,15 @@ import { useNavigate } from "react-router-dom";
 const DatasetCard = ({ dataset, isExpanded, toggleExpand }) => {
   const navigate = useNavigate();
 
-  // Truy cập dữ liệu từ metadata
+  
   const title = dataset.metadata.title;
   const description = dataset.metadata.description;
-  const keywords = dataset.metadata.keywords || []; // Đảm bảo keywords là mảng, tránh lỗi
-  const organization = dataset.metadata.organization || "Unknown"; // Thay authors bằng organization
+  const keywords = dataset.metadata.keywords || []; 
+  const organization = dataset.metadata.organization || "Unknown"; 
 
   return (
     <div className="border p-4  bg-white hover:bg-gray-50 transition">
-      {/* Tiêu đề điều hướng đến trang chi tiết dataset */}
+     
       <h3
         onClick={() => navigate(`/datasets/${dataset.id}`)} 
         className="hover:underline-offset-0 cursor-pointer text-xl font-semibold text-green-800"
@@ -19,13 +19,13 @@ const DatasetCard = ({ dataset, isExpanded, toggleExpand }) => {
         {title}
       </h3>
 
-      {/* Hiển thị tổ chức thay vì authors */}
+
       <p className="text-sm text-gray-600 italic mb-2">Published by: {organization}</p>
 
       {/* Mô tả dataset */}
       <p className="text-gray-700 mb-2">{description}</p>
 
-      {/* Hiển thị từ khóa */}
+
       <div className="flex flex-wrap gap-2 text-sm mb-2">
         {keywords.length > 0 ? (
           keywords.map((kw, i) => (

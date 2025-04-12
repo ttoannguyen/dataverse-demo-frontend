@@ -12,7 +12,7 @@ const MapViewer = () => {
     const fetchRemoteSensingData = async () => {
       try {
         setLoading(true);
-        const data = await dataverseApi.getRemoteSensingData(); // Giả định API trả về dữ liệu viễn thám
+        const data = await dataverseApi.getRemoteSensingData();
         if (Array.isArray(data)) {
           setRemoteSensingData(data);
         } else {

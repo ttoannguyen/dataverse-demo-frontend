@@ -24,7 +24,6 @@ const SidebarFilter = ({ filters, setFilters, filterOptions }) =>{
 
   return (
     <div className="space-y-4">
-      {/* Phần "Search Result For" */}
       <div>
         <h2 className="font-semibold text-gray-700 mb-2">Search Result For</h2>
         <ul className="space-y-2">
@@ -68,8 +67,8 @@ const SidebarFilter = ({ filters, setFilters, filterOptions }) =>{
           <div>
             <label className="block text-sm font-medium text-gray-700">Language</label>
             <select
-              name="language" // Sửa từ "country" thành "language"
-              value={filters.language} // Sửa từ "languages" thành "language"
+              name="language" 
+              value={filters.language} 
               onChange={handleFilterChange}
               className="w-full p-2 border rounded"
             >

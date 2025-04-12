@@ -12,7 +12,6 @@ import {
   Legend,
 } from 'chart.js';
 
-// Đăng ký các thành phần cần thiết cho Chart.js
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -51,7 +50,6 @@ const KPIDashboard = () => {
 
   const filteredKPIs = kpis.filter((kpi) => kpi.level === selectedLevel);
 
-  // Dữ liệu cho biểu đồ cột (Productivity)
   const productivityData = {
     labels: filteredKPIs.map((kpi) =>
       kpi.level === 'household' ? `Household ${kpi.household_id}` : kpi.location.province
@@ -71,7 +69,6 @@ const KPIDashboard = () => {
     ],
   };
 
-  // Dữ liệu cho biểu đồ tròn (Land Ownership)
   const landOwnershipData = {
     labels: ['Has Land Ownership', 'No Land Ownership'],
     datasets: [
@@ -104,7 +101,6 @@ const KPIDashboard = () => {
     <div className="p-4">
       <h2 className="text-2xl font-semibold text-green-800 mb-4">KPI Dashboard</h2>
 
-      {/* Dropdown chọn cấp độ */}
       <div className="mb-4">
         <label className="mr-2">Select Level:</label>
         <select
@@ -119,9 +115,9 @@ const KPIDashboard = () => {
         </select>
       </div>
 
-      {/* Biểu đồ */}
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        {/* Biểu đồ cột: Productivity */}
+
         <div className="bg-white p-4 rounded-lg shadow">
           <h3 className="text-lg font-semibold mb-2">Productivity (tons/ha)</h3>
           <Bar
