@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import dataverseApi from "../../services/DataverseApi";
 import "../../assets/icon/fontawesome/css/all.min.css";
 import defaultFile from "../../assets/img/muti_file_icon.png";
+import "../../global.css";
 
 const DatasetDetail = () => {
   const location = useLocation();
@@ -86,8 +87,8 @@ const DatasetDetail = () => {
         <p>Version 1.0</p>
         <div className="grid grid-cols-[75%_25%] gap-4">
           <div class=" p-4  text-sm">
-            <div className="custom-light-blue grid grid-cols-[15%_85%] ">
-              <div className="w-full text-xl">
+            <div className="p-4 custom-light-blue grid grid-cols-[15%_85%] ">
+              <div className="w-full text-xl ">
                 <img src={defaultFile} alt="" />
               </div>
               <div>
@@ -106,9 +107,9 @@ const DatasetDetail = () => {
                     <div className="relative inline-block text-left">
                       <button
                         onClick={toggleDropdown}
-                        className="cursor-pointer"
+                        className="cursor-pointer flex items-center text-hover-underline-blue "
                       >
-                        Menu
+                        <span> Cite Dataset</span>
                       </button>
 
                       {isOpen && (

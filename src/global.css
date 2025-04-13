@@ -1,0 +1,17 @@
+.custom-light-blue {
+  background-color: rgb(237, 246, 251);
+}
+
+.custom-file-color {
+  color: rgb(129, 172, 206);
+}
+
+.text-hover-underline-blue {
+  color: #337ab7;
+}
+
+.text-hover-underline-blue:hover {
+  text-decoration: underline;
+  transition: 0.2s;
+  color: #23527c;
+}
