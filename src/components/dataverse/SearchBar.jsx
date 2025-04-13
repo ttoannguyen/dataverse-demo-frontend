@@ -22,7 +22,7 @@ const SearchBar = ({ keyword = "", setFilters, className }) => {
   };
 
   return (
-    <div className={className}>
+    <div className={`${className }`}>
       <div className="flex items-center overflow-hidden border">
         <input
           type="text"

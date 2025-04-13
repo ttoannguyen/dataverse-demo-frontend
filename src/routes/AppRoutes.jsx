@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
 import DataversePage from "../pages/DataversePage";
 import DatasetDetail from "../components/dataverse/DatasetDetail";
+import KMSPage from "../pages/KMSPage";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
         path: "datasets/:datasets",
         element: <DatasetDetail />,
       },
+      {
+        path: "analysis",
+        element: <KMSPage/>
+      }
     ],
   },
 ]);

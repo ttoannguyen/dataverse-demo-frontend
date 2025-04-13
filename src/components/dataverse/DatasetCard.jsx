@@ -14,7 +14,7 @@ const DatasetCard = ({ dataset, isExpanded, toggleExpand }) => {
      
       <h3
         onClick={() => navigate(`/datasets/${dataset.id}`)} 
-        className="hover:underline-offset-0 cursor-pointer text-xl font-semibold text-green-800"
+        className="hover:underline cursor-pointer text-xl font-semibold text-blue-700"
       >
         {title}
       </h3>
@@ -29,7 +29,7 @@ const DatasetCard = ({ dataset, isExpanded, toggleExpand }) => {
       <div className="flex flex-wrap gap-2 text-sm mb-2">
         {keywords.length > 0 ? (
           keywords.map((kw, i) => (
-            <span key={i} className="bg-green-100 text-green-700 px-2 py-1 rounded-full">
+            <span key={i} className="bg-blue-100  px-2 py-1 rounded-full">
               #{kw}
             </span>
           ))
@@ -41,7 +41,7 @@ const DatasetCard = ({ dataset, isExpanded, toggleExpand }) => {
       {/* Nút mở rộng/thu gọn */}
       <button
         onClick={() => toggleExpand(dataset.id)}
-        className="text-green-600 hover:underline text-sm"
+        className="text-blue-500 hover:underline text-sm"
       >
         {isExpanded ? "Hide Details" : "Show Details"}
       </button>

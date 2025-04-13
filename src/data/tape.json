@@ -46,7 +46,7 @@
       },
       "survey_date": "2025-04-01",
       "data": {
-        "land_ownership": false,
+        "land_ownership": true,
         "productivity_tons_per_ha": 6.0,
         "income_vnd_per_year": 150000000,
         "value_added_percent": 25,

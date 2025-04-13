@@ -148,12 +148,12 @@ export default function DataversePage() {
   }
 
   return (
-    <div className="mt-30">
+    <div className="mx-2 mt-30">
       <div className="my-2">
-        <SearchBar className={"w-72"} keyword={filters.keyword} setFilters={setFilters} />
+        <SearchBar className={"sm:w-72"} keyword={filters.keyword} setFilters={setFilters} />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-50 min-h-screen">
-        <aside className="bg-white w-72 p-4 shadow-sm md:col-span-1 border">
+        <aside className="bg-white sm:w-72 p-4 shadow-sm md:col-span-1 border">
           <SidebarFilter
             filters={filters}
             setFilters={setFilters}

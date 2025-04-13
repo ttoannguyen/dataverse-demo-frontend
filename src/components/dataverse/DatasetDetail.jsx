@@ -81,7 +81,7 @@ const DatasetDetail = () => {
       </div>
 
       <div className="">
-        <span className="text-hover-underline-blue">CTU Dataverse</span> &gt;{" "}
+        <Link to={"/"} className="text-hover-underline-blue">CTU Dataverse</Link> &gt;{" "}
         <span className="text-hover-underline-blue">{metadata.topic}</span>
       </div>
 
