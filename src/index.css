@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-    --text-sm: 0.875rem; /* 14px */
-    --text-sm--line-height: 1.25rem; /* ≈ 20px */
-  }
+  --text-sm: 0.875rem; /* 14px */
+  --text-sm--line-height: 1.25rem; /* ≈ 20px */
+}
 
 @theme {
   --color-primary: #f8f8f8;
@@ -16,5 +16,6 @@
   font-family: "Open-Sans", sans-serif;
 }
 
-
-
+.custom-light-blue {
+  background-color: rgb(237, 246, 251);
+}
